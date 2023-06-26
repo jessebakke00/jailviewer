@@ -1,0 +1,15 @@
+<div class="header">
+  <div class="title-container">
+    <h1>The Inmate JailViewer</h1>
+    <hr />
+    <span class="county-container">  
+      <a class="btn btn-warning" href="/admin/">Admin</a>
+      {% for county in counties %}
+      <a class="btn btn-warning" href="/products/inmates/county/{{ county.title }}/">{{ county.title }}</a>
+      {% endfor %}
+      <a class="btn btn-warning" href="/products/inmates/sex_offenders/">Sex Offenders</a>
+      {% block county%}{% endblock %}
+    </span>
+  </div>
+
+</div>

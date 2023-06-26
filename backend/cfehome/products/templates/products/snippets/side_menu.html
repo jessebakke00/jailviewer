@@ -1,0 +1,44 @@
+<h3 id="nav-menu-header">Menu</h3>
+<ul id="menu" class="menu">
+            <li><div>Counties</div>
+              <ul>
+                {% for cnty in counties %}
+                <li><div>{{ cnty }}</div>
+                <ul>
+                    <li><div><a href="{% url 'county' cnty %}">All</a></div></li>
+                    <li><div><a href="{% url 'custody_by_county' cnty %}">In Custody</a></div></li>
+                  </ul>
+                </li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li><div>Sex Offenders</div>
+              <ul>
+                <li><div>County</div>
+                  <ul>
+                    {% for cnty in counties %}
+                    <li><div><a href="/products/sex_offenders/{{ cnty }}/">{{ cnty }}</a></div></li>
+                    {% endfor %}
+                  </ul>
+                </li>
+                <li><div><a href="/products/inmates/sex_offenders/">All</a></div>
+                
+                </li>
+              </ul>
+            </li>
+            <li><div>Navigation</div>
+              <ul>
+                <li><div><a href="{% url 'all_inmates' %}">Home</a></div></li>
+                <li><div><a href="" onclick="history.back();">Back</a></div></li>
+                <li><div><a href="{% url 'all_inmates' %}">Home</a></div></li>
+                <li><div><a href="/admin/">Admin</a></div></li>
+              </ul>    
+            </li>
+            <li><div>Members/Login</div>
+              <ul>
+                <li><a href="/admin/login/">Login</a></li>
+                <li><a href="/accounts/profile/">Profile</a></li>
+                <li><a href="/admin/logout/">Logout</a></li>
+              </ul>
+            </li>
+          </ul>

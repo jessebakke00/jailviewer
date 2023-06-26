@@ -1,0 +1,354 @@
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+
+/*
+[class*="col-"] {
+  float: left;
+  padding: 15px;
+  border: 1px solid red;
+}
+*/
+body {
+  background-color: #fff;
+}
+ 
+table {
+  border-radius: 5px 5px 0px 0px;
+  padding: 0px;
+  margin: 0px;  
+}
+
+table tr:first-child td {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+table tr:nth-child(even) {
+  background-color: #fff;
+}
+
+table tr:nth-child(odd) {
+  background-color: #cdcdcd;
+}
+
+table tr th {
+  background-color: #007fff;
+  
+  color: #fff;
+  font-size: 14px;
+}
+
+table tr:first-child th {
+  border-radius: 5px 5px 0px 0px;
+}
+
+
+table tr td {
+  border-bottom: 1px solid black;
+  font-size: 10px;
+  padding: 4px;
+  margin: 0px;
+  line-height: 16px;
+}
+
+table tr td:first-child {
+  
+}
+
+table tr td:last-child {
+  
+}
+
+table tr:hover {
+  /*background-color: coral;
+  cursor: pointer;*/
+}
+
+table tr td a {
+  color: blue;
+  font-size: 10px;
+}
+
+table tr td a:active {
+  background-color: #ababab;
+  color: purple;
+}
+#dialog {
+  width: 400px;
+}
+
+#dialogList {
+  padding: 10px;
+  border: 1px solid #cdcdcd;
+  border-radius: 3px;
+  
+}
+#dialogList li {
+  list-style: none;
+  padding: 5px;
+  color: blue;
+  background-color: #fff;
+  font-size: small;
+  
+}
+
+#footer {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+#footer > div {
+  display: flex;
+  flex-direction: row;
+}
+
+#footer > div > div {
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 15px;  
+  padding-bottom: 0px;
+}
+
+#nav-menu-header {
+  background-color: #007fff;
+  color: #fff;
+  border: 1px solid #cdcdcd;
+  margin: 0px;
+  padding: 10px;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border-bottom: 0px; 
+}
+
+
+/*[class ^="box-"] {
+  background-color: skyblue;
+  border: 2px solid black;
+  font-size: 65px; 
+}*/
+
+/*@media (max-width: 800px) {
+  .box-1, .box-2, .box-3 {
+    flex: 100%;
+  }
+}*/
+
+.btn {
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ababab;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #353535;
+}
+
+.btn:active {
+  background-color: #353535;
+  color: #fff;
+  border-color: #fff;
+}
+
+.button {
+  text-decoration: none;
+  font-size: small;
+  color: blue;
+  padding: 3px;
+  margin: 5px 3px;
+}
+
+.charge {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+.con-box {  
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 4px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+  border: 1px solid black;
+  min-width: 800px;
+  max-width: 1087px;
+}
+
+.content {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  padding: 15px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  border-top: none;
+  margin-top: 0px;
+}
+
+.data-box:last-child {
+  border-right: 1px solid black;
+}
+
+.header-subbox {
+  display: flex;
+  flex-direction: column;  
+  background-color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  /*border: 1px solid black;*/
+}
+
+.header-subbox h1 {
+  margin: 0px;
+  padding: 10px;
+  gap: 10px;
+  flex-grow: 100;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.header-subbox div {
+  line-height: 30px;
+  flex-grow: 100;
+  gap: 10px;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.imate-container {
+  
+}
+
+.inmate-name {
+  font-size: large;
+}
+
+.letter {
+  font-size: 18px;  
+}
+
+.main-navlink-container {
+  
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  padding-bottom: 10px;
+}
+
+.menu-box {
+  flex: 30%;
+}
+
+.menu-header {
+  flex: 30%;
+  align-content: center;
+}
+
+.menu-header h3 {
+  
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+  border: 1px solid green;
+  margin: 0px;
+  text-align: center;
+  color: #fff;
+}
+
+.navlinks {
+  flex: 70%;
+  flex-shrink: 0;  
+  border: 1px solid black;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: blue;
+}
+
+.nav-letter:hover {
+  color: #0a0a0a;
+  text-decoration: overline;
+}
+
+.navlinks-main-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.nav-menu {
+  /*background-color: white;
+  margin: 0px;
+  background-color: blue;*/
+}
+
+.nav-menu-wrapper {
+  /*background-color: #efefef;*/
+}
+
+.nav-menu-wrapper h3:first-child {
+  /*border-radius: 5px 5px 0px 0px;  */
+}
+
+.norm-pointer {
+  cursor: pointer;
+}
+
+.sub-nav-menu {
+  margin: 0px;
+  padding: 15px;
+  list-style: none;
+  background-color: #fff;
+}
+
+.sub-nav-menu li {
+  background-color: #fff;
+  border-bottom: 1px solid #0f0f0f;
+  padding: 5px;
+}
+
+.section-container {
+  /*display: block;
+  background-color: black;*/
+}
+
+.table-box {
+  flex: 70%;
+}
+
+.title-container {
+
+}
+
+table tr:nth-child(even) th {
+  /*font-size: small;*/
+}
+

@@ -1,0 +1,42 @@
+{% extends "products/base_site.html" %}
+{% load static %}
+
+{% block title %}Inmates Home{% endblock %}
+
+{% block content %}
+
+<div class="inmate-container">
+  <div class="inmate-section-container">
+    <ul>
+    {% for key, value in inmate_letter.items %}
+      <li>
+        <h4 class="letter" id="{{ key }}">{{ key }}</h4>
+      </li>
+      <li>
+        <span class="heading"></span>
+        <span class="heading">Last Name</span>
+        <span class="heading">First Name</span>
+        <span class="heading">Middle Name</span>
+        <span class="heading">Booking Number</span>
+        <span class="heading">Booking Date</span>
+        <span class="heading">Release Date</span>
+        <span class="heading">County</span>
+      </li>
+      {% for inmate in value %}
+      <li>
+        <span class="data-box"><a href="/products/inmates/{{ inmate.book_id }}/">View</a></span>
+        <span class="data-box">{{ inmate.last_name }}</span>
+        <span class="data-box">{{ inmate.first_name }}</span>
+        <span class="data-box">{{ inmate.middle_name }}</span>
+        <span class="data-box">{{ inmate.book_id }}</span>
+        <span class="data-box">{{ inmate.booking_date }}</span>
+        <span class="data-box">{{ inmate.release_date }}</span>
+        <span class="data-box">{{ inmate.county }}</span>
+      </li>
+      {% endfor %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>
+
+{% endblock %}

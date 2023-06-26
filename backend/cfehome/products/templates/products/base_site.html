@@ -1,0 +1,39 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+
+
+{% block countylink %}
+  {% for county in counties %}
+  <a class="btn btn-warning" href="/products/inmates/county/{{ county.title }}/">{{ county.title }}</a>
+  {% endfor %}
+  <a class="btn btn-warning" href="/products/inmates/sex_offenders/">Sex Offenders</a>
+  {% if user != "AnonymousUser" %}
+  
+  <a class="btn btn-warning" href="/accounts/logout/">Logout</a>
+  {% endif %}
+  {% if user == "AnonymousUser" %}
+  <a class="btn btn-warning" href="/accounts/login/">Login</a>
+  {% endif %}
+{% endblock countylink %}
+
+
+{% block custodybutton %}{% endblock %}
+{% block backbutton %}{% endblock backbutton %}
+
+{% block subtitle %}{% endblock subtitle %}
+
+{% block navlinks %}
+
+<div class="navlinks">
+  {% for letter in inmate_letter.keys %}
+  <a class="nav-letter" href="#{{ letter }}">{{ letter }}</a>
+  {% endfor %}
+</div>
+
+{% endblock navlinks %}
+
+{% block content %}{% endblock content %}
+
+{% block footer %}{% include "products/snippets/footer.html" %}{% endblock footer %}
+

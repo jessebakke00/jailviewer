@@ -1,0 +1,67 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block title %}Inmates In Custody{% endblock %}
+
+{% block navlinks %}
+<div class="main-navlink-container">
+  
+    <span class="navlinks">
+      {% for letter in inmate_letter.keys %}
+      <a href="#{{ letter }}">{{ letter }}</a>
+      {% endfor %}
+    </span>
+  
+</div>
+{% endblock %}
+
+{% block content %}
+<table>
+<tr>
+    <td colspan="8">
+    <!--<h4 class="letter" id="{{ key }}">{{ key }}</h4>-->
+    </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><strong>Last Name</strong></td>
+      <td><strong>First Name</strong></td>
+      <td><strong>Middle Name</strong></td>
+      <td><strong>Booking Number</strong></td>
+      <td><strong>Booking Date</strong></td>
+      <td><strong>Release Date</strong></td>
+      <td><strong>County</strong></td>
+    </tr>
+    {% for inmate in inmates %}
+
+    <tr>
+      
+      <td>
+        <a href="/products/inmates/{{ inmate.book_id }}/">View</a>
+      </td>
+      <td>
+        {{ inmate.last_name }}
+      </td>
+      <td>
+        {{ inmate.first_name }}
+      </td>
+      <td>
+        {{ inmate.middle_name }}
+      </td>
+      <td>
+        {{ inmate.book_id }}
+      </td>
+      <td>
+        {{ inmate.booking_date }}
+      </td>
+      <td>
+        {{ inmate.release_date }}
+      </td>
+      <td>
+        {{ inmate.county }}
+      </td>
+      
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

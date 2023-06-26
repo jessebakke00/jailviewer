@@ -1,0 +1,10 @@
+{% extends "products/base.html" %}
+{% load static %}
+
+{% block content %}
+<ul>
+{% for charge in charges %}
+<li><span>{{ charge.book_id }}</span>{{ charge.charge }}</li>
+{% endfor %}
+</ul>
+{% endblock %}

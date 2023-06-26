@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+  {% load static %}
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Products Home{% endblock %}</title>
+    <link type="text/css" rel="stylesheet" href="{% static 'css/main.css' %}">
+      <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+      
+      <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+      <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+      <style>
+        
+      </style>
+    <script type="text/javascript">
+      
+        function getToken(name){
+            var cookieValue = null;
+            if(document.cookie && document.cookie != ''){
+                var cookies = document.cookie.split(';');
+                for(var i=0; i<cookies.length; i++){
+                    var cookie = cookies[i].trim();
+                    if(cookie.substring(0, name.length + 1) == (name + '=')){
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        $( function(){
+          $( "#accordion" ).accordion();
+          $( ".menu" ).menu();
+          $( "#accordionMain" ).accordion();
+          $( "#tabs" ).tabs();
+          $( "#dialog" ).dialog({
+            autoOpen: false,
+            show: {
+              effect: "fold",
+              duration: 1000
+            },
+            hide: {
+              effect: "fold",
+              duration: 1000
+            }
+          });
+          
+          var csrftoken = getToken('csrftoken');
+          const myList = document.getElementById( "dialogList" );
+          const listHeader = document.getElementById( "inmateName" );
+          console.log("csrftoken: " + csrftoken);
+          
+          $( ".view" ).on( "click", function(){
+            listHeader.textContent = "";
+            $( "#dialogList > li" ).remove();
+              var url = "{% url 'fetch_charges' %}";
+              console.log( url );
+              var attrib = $( this ).attr( "title" );
+              fetch(url, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({"book_id":attrib})
+              })
+              .then(( response ) => response.json())
+              .then(( data ) => {
+
+               var inmate = data["inmate"];
+               var charges = inmate["charges"];
+               var name = inmate["first_name"] + " " + inmate[ "middle_name" ] + " " + inmate[ "last_name" ];
+               
+                var d = charges.substring(1);
+                var dataArray = d.split(";");
+                
+                listHeader.textContent = name;
+                for(var i=0; i<dataArray.length; i++){
+                  console.log(dataArray[i]);
+                  const listItem = document.createElement("li");
+                  listItem.textContent = dataArray[i];
+                  myList.appendChild(listItem);
+                }
+                $( "#dialog" ).dialog( "open" );
+              });
+            });
+          });
+      
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div id="header" class="head">
+        <div class="header-subbox">
+          <h1>The Inmate JailViewer</h1>
+          <br>
+          {% block subtitle %}{% endblock %}
+          {% block navlinks %}{% endblock %}
+        </div>
+      </div>
+      
+      <div class="content">
+      {% block content %}{% endblock content %}
+      </div>
+      
+      <div id="footer" class="foot">
+        {% include "products/snippets/footer.html" %}
+      </div>
+    </div>
+    
+  </body>
+</html>

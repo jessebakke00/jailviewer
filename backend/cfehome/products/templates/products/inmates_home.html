@@ -1,0 +1,75 @@
+{% extends "products/base_site.html" %}
+{% load static %}
+
+{% block title %}Inmates Home{% endblock %}
+
+
+
+{% block content %}
+<div class="main-container col-8">
+  <div id="dialog" title="Inmate Charges">
+    <p>
+      <h3 id="inmateName"></h3>
+      <ul id="dialogList"></ul>
+    </p>
+  </div>
+<table class="inmate-table">
+  <!--<tr>
+    <th colspan=8><h2 class="big">Count: {{ number_in_custody }}</h2></th>
+  </tr>-->
+  {% for key, value in inmate_letter.items %}
+  <tr>
+  <th colspan=8>
+  <h4 class="letter" id="{{ key }}">{{ key }}</h4>
+  </th>
+  </tr>
+  <tr>
+    
+    <th colspan=2><strong>Last Name</strong></th>
+    <th><strong>First Name</strong></th>
+    <th><strong>Middle Name</strong></th>
+    <th><strong>Booking Number</strong></th>
+    <th><strong>Booking Date</strong></th>
+    <th><strong>Release Date</strong></th>
+    <th><strong>County</strong></th>
+  </tr>
+  {% for inmate in value %}
+
+  <tr>
+    
+    <td>
+      <!--<a class="view" href="/products/inmates/{{ inmate.book_id }}/">View</a>-->
+      <button class="view" title="{{ inmate.book_id }}">View</button>
+    </td>
+    <td>
+      {{ inmate.last_name }}
+    </td>
+    <td>
+      {{ inmate.first_name }}
+    </td>
+    <td>
+      {{ inmate.middle_name }}
+    </td>
+    <td>
+      {{ inmate.book_id }}
+    </td>
+    <td>
+      {{ inmate.booking_date }}
+    </td>
+    <td>
+      {{ inmate.release_date }}
+    </td>
+    <td>
+      {{ inmate.county }}
+    </td>
+    
+  </tr>
+     
+    {% endfor  %}
+    
+    {% endfor %}
+ 
+  </table>
+
+{% endblock %}
+

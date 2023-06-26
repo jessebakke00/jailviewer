@@ -1,0 +1,184 @@
+
+body {
+  background-color: #dedede;
+}
+/*
+li {
+  list-style: none;
+  margin: 5px;
+  /*padding: 5px;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+ul {
+  
+  border: none;
+  margin: 0px;
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #aaa;
+}
+
+p {
+  font-size: small;
+  padding: 3px;
+  margin: 0px;
+}
+
+li p a {
+  color: blue;
+  text-decoration: none;
+  font-size: small;
+  padding: 0px;
+}
+
+li p a:active {
+  color: purple;
+}*/
+  
+table {
+  /*border: 1px solid black;*/
+  border-radius: 5px 5px 0px 0px;
+  /*float: left;
+  display: block;*/
+  margin-left: 5%;
+  
+}
+
+table tr:first-child td {
+  /*background-color: orange;*/
+  /*border-top: 1px solid black;*/
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+table tr {
+  background-color: #fff;
+  padding: 4px;
+  
+}
+table tr td {
+  border-bottom: 1px solid black;
+  font-size: 10px;
+  padding: 4px;
+  margin: 0px;
+  padding-left: 5px;
+}
+
+table tr td:first-child {
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
+
+table tr td:last-child {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+table tr td a {
+  color: blue;
+  
+  font-size: 10px;
+}
+
+table tr td a:active {
+  background-color: #ababab;
+  color: purple;
+}
+
+h4 {
+  margin: 5px;
+  padding: 5px;
+}
+
+.main-navlink-container {
+  display: block;
+  clear: both;
+  margin: 5px;
+  border: 1px solid orange;
+}
+
+.imate-container {
+  
+  
+  background-color: #fefefe;
+  padding: 5px;
+  border: 1px solid black;
+  
+}
+
+.inmate-name {
+  /*color: #454545;*/
+  font-size: large;
+}
+
+.cc {
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.charge-container {
+  margin: 3px;
+  padding: 3px;
+  background-color: #fff;
+  border-bottom: 1px solid #aaa;
+  
+}
+
+.letter {
+  font-size: 18px;
+}
+
+.charge {
+  /*background-color: #dedede;
+  border: 1px solid #ababab;
+  border-radius: 2px;*/
+  padding: 0px;
+  margin: 0px;
+}
+
+.button {
+  text-decoration: none;
+  font-size: small;
+  color: blue;
+  padding: 3px;
+  margin: 5px 3px;
+}
+
+.btn {
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #ababab;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #353535;
+}
+
+.btn:active {
+  background-color: #353535;
+  color: #fff;
+  border-color: #fff;
+}
+
+.navlinks {
+  display: block;
+  border: 1px solid black;
+  background-color: #efefef;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.navlinks a {
+  text-decoration: none;
+  color: blue;
+}
+
+.footer {
+  margin: 10px;
+  border: 1px solid black;
+  padding: 10px;
+}
